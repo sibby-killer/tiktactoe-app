@@ -3,22 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic-Tac-Toe</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Tic-Tac-Toe Game</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Loading Screen -->
     <div id="loading">
-        <h1 class="game-title">Tic-Tac-Toe</h1>
+        <div class="game-title">Tic-Tac-Toe</div>
         <div class="loading-bar">
             <div class="loading-fill"></div>
         </div>
-        <p class="loading-text">~×͜× ᴄ͢͢͢ʀɪᴍɪɴᴀʟ★</p> <!-- Loading Screen Text -->
+        <div class="loading-text">Loading game...</div>
+    </div>
+
+    <!-- Mode Selection Screen -->
+    <div id="mode-selection" style="display: none;">
+        <h1 class="game-title">Select Mode</h1>
+        <button onclick="selectMode('multiplayer')">Multiplayer</button>
+        <button onclick="selectMode('computer')">Play with Computer</button>
+    </div>
+
+    <!-- Difficulty Selection Screen -->
+    <div id="difficulty-selection" style="display: none;">
+        <h1 class="game-title">Select Difficulty</h1>
+        <button onclick="setDifficulty('easy')">Easy</button>
+        <button onclick="setDifficulty('medium')">Medium</button>
+        <button onclick="setDifficulty('hard')">Hard</button>
     </div>
 
     <!-- Game Screen -->
-    <div id="game" class="game-screen" style="display: none;">
-        <h2 id="player-turn">Player X's turn</h2>
+    <div id="game" style="display: none;">
+        <h1 class="game-title">Tic-Tac-Toe</h1>
+        <div id="player-turn">Player X's turn</div>
         <div class="grid">
             <div class="cell" onclick="makeMove(0)"></div>
             <div class="cell" onclick="makeMove(1)"></div>
@@ -31,21 +47,20 @@
             <div class="cell" onclick="makeMove(8)"></div>
         </div>
         <button onclick="restartGame()">Restart Game</button>
-        <button onclick="window.close()">Quit</button>
     </div>
 
-    <!-- Pop-up for Win/Draw Messages (displaying above the grid now) -->
+    <!-- Popup for win/draw -->
     <div id="message-popup" class="popup" style="display: none;">
         <div class="popup-content">
-            <span id="popup-message"></span>
-            <button onclick="closePopup()">OK</button>
+            <p id="popup-message"></p>
+            <button onclick="closePopup()">Close</button>
         </div>
     </div>
 
-    <!-- Audio elements -->
-    <audio id="loadingMusic" src="game-music-7408.mp3"></audio>
+    <!-- Audio Elements -->
     <audio id="gameMusic" src="game_music.mp3" loop></audio>
-    <audio id="clickSound" src="click-sound.mp3"></audio>
+    <audio id="loadingMusic" src="loading_music.mp3" loop></audio>
+    <audio id="clickSound" src="click_sound.mp3"></audio>
 
     <script src="script.js"></script>
 </body>
