@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading">
+        <h1 class="game-title">Tic-Tac-Toe</h1>
+        <div class="loading-bar">
+            <div class="loading-fill"></div>
+        </div>
+        <p class="loading-text">~×͜× ᴄ͢͢͢ʀɪᴍɪɴᴀʟ★</p> <!-- Loading Screen Text -->
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game" class="game-screen" style="display: none;">
+        <h2 id="player-turn">Player X's turn</h2>
+        <div class="grid">
+            <div class="cell" onclick="makeMove(0)"></div>
+            <div class="cell" onclick="makeMove(1)"></div>
+            <div class="cell" onclick="makeMove(2)"></div>
+            <div class="cell" onclick="makeMove(3)"></div>
+            <div class="cell" onclick="makeMove(4)"></div>
+            <div class="cell" onclick="makeMove(5)"></div>
+            <div class="cell" onclick="makeMove(6)"></div>
+            <div class="cell" onclick="makeMove(7)"></div>
+            <div class="cell" onclick="makeMove(8)"></div>
+        </div>
+        <button onclick="restartGame()">Restart Game</button>
+        <button onclick="window.close()">Quit</button>
+    </div>
+
+    <!-- Pop-up for Win/Draw Messages (displaying above the grid now) -->
+    <div id="message-popup" class="popup" style="display: none;">
+        <div class="popup-content">
+            <span id="popup-message"></span>
+            <button onclick="closePopup()">OK</button>
+        </div>
+    </div>
+
+    <!-- Audio elements -->
+    <audio id="loadingMusic" src="game-music-7408.mp3"></audio>
+    <audio id="gameMusic" src="game_music.mp3" loop></audio>
+    <audio id="clickSound" src="click-sound.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

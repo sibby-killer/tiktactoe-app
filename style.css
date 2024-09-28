@@ -1,0 +1,138 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('game_background.jpg'); /* Game background */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Loading Screen */
+#loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('loading_background.jpg'); /* Loading background */
+    background-size: cover;
+    background-position: center;
+}
+
+.game-title {
+    font-size: 48px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #fff;
+    text-shadow: 2px 2px #000;
+}
+
+.loading-bar {
+    width: 300px;
+    height: 20px;
+    background-color: #ddd;
+    margin: 20px 0;
+    position: relative;
+}
+
+.loading-fill {
+    width: 0;
+    height: 100%;
+    background-color: #00ff00;
+    animation: load 5s linear forwards;
+}
+
+@keyframes load {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+.loading-text {
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 1px 1px #000;
+}
+
+/* Game Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-weight: bold;
+    border: 2px solid #000;
+    cursor: pointer;
+}
+
+.cell:hover {
+    background-color: #ddd;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#player-turn {
+    font-size: 24px;
+}
+
+/* Pop-up styles */
+.popup {
+    position: fixed;
+    top: 10px; /* Move pop-up to the top of the grid */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.popup-content button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* New Win Line Style */
+.win-line {
+    background-color: yellow !important;
+    color: red;
+}
